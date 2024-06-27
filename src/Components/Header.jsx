@@ -17,7 +17,7 @@ const Header = () => {
         </h1>
         <ul>
           <li>Home</li>
-          <li>Hair Cream</li>
+          <li>HairCream</li>
           <li>Face Primer</li>
           <li>Makeup Brushes</li>
           <li>Hair Spray</li>
