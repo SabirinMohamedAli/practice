@@ -1,20 +1,13 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { CartContext } from '../CartContext';
+import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
   const { cart, removeFromCart } = useContext(CartContext);
-  const [email, setEmail] = useState('');
-  const [checkoutMessage, setCheckoutMessage] = useState('');
+  const navigate = useNavigate();
 
-  const handleCheckout = (e) => {
-    e.preventDefault();
-    if (cart.length === 0) {
-      setCheckoutMessage('Your cart is empty.');
-    } else {
-      setCheckoutMessage(`Thank you for your purchase! A confirmation email has been sent to ${email}.`);
-      setEmail('');
-      // Clear the cart or perform additional checkout logic here
-    }
+  const handleCheckout = () => {
+    navigate('/checkout');
   };
 
   return (
@@ -28,22 +21,10 @@ const Cart = () => {
           </li>
         ))}
       </ul>
-      {checkoutMessage && <div className="alert alert-success">{checkoutMessage}</div>}
       {cart.length > 0 && (
-        <form onSubmit={handleCheckout}>
-          <div className="form-group">
-            <label htmlFor="email">Email for confirmation:</label>
-            <input
-              type="email"
-              className="form-control"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          <button type="submit" className="btn btn-primary mt-2">Checkout</button>
-        </form>
+        <div className="mt-3">
+          <button className="btn btn-primary" onClick={handleCheckout}>Proceed to Checkout</button>
+        </div>
       )}
     </div>
   );

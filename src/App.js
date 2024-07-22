@@ -3,6 +3,7 @@ import Header from './Components/Header';
 import Categories from './Components/Products';
 import Footer from './Components/Footer';
 import Cart from './Components/Cart';
+import Checkout from './Components/Checkout'; // Import Checkout component
 import { CartProvider } from './CartContext';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
@@ -14,6 +15,7 @@ function App() {
         <div className="App">
           <Routes>
             <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
             <Route path="*" element={<>
               <Header />
               <Routes>
