@@ -7,8 +7,8 @@ import category4 from '../images/5.jpg';
 import category5 from '../images/10.jpg';
 import category6 from '../images/2.jpg';
 import category7 from '../images/3.jpg';
-import category8 from '../images/4.jpg';
-import category9 from '../images/5.jpg';
+import category8 from '../images/10.jpg';
+import category9 from '../images/11.jpg';
 
 const Categories = () => {
   const { cart, addToCart, removeFromCart } = useContext(CartContext);
