@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { FaShoppingCart } from 'react-icons/fa';
+import { CartContext } from '../CartContext'; // Import CartContext
 
 const Header = () => {
+  const { cart } = useContext(CartContext); // Use context to get cart items
+
   const heroStyle = {
     display: 'flex',
     flexDirection: 'column',
@@ -56,6 +60,11 @@ const Header = () => {
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#contact" style={{ fontSize: '1.2rem' }}>Contact Us</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#cart" style={{ fontSize: '1.2rem' }}>
+                  <FaShoppingCart /> Cart ({cart.length}) {/* Display cart count */}
+                </a>
               </li>
             </ul>
           </div>

@@ -1,31 +1,51 @@
-// src/components/Products.js
-import React from 'react';
-import product1 from '../images/8.jpg';
-import product2 from '../images/9.jpg';
-import product3 from '../images/10.jpg';
-import product4 from '../images/11.jpg';
+import React, { useContext } from 'react';
+import { CartContext } from '../CartContext';
+import category1 from '../images/2.jpg';
+import category2 from '../images/3.jpg';
+import category3 from '../images/4.jpg';
+import category4 from '../images/5.jpg';
+import category5 from '../images/10.jpg';
+import category6 from '../images/2.jpg';
+import category7 from '../images/3.jpg';
+import category8 from '../images/4.jpg';
+import category9 from '../images/5.jpg';
 
-const Products = () => {
-  const products = [
-    { id: 1, name: 'Gabi Velvet Lip Combo', price: '$20.00',
-       discount: '10%', image: product1 },
-    { id: 2, name: 'Sahin Beauty Blusher', 
-      price: '$17.00', discount: '30%', image: product2 },
-    { id: 3, name: 'Kemsoff Concealer Stick', price: '$28.00',
-       discount: '15%', image: product3 },
-    { id: 4, name: 'Nurture Gold Serum', price: '$30.00', discount: '20%', image: product4 },
+const Categories = () => {
+  const { cart, addToCart, removeFromCart } = useContext(CartContext);
+
+  const categories = [
+    { img: category1, name: 'Hair Cream' },
+    { img: category2, name: 'Makeup Brushes' },
+    { img: category3, name: 'Perfumes' },
+    { img: category4, name: 'Skincare Cream' },
+    { img: category5, name: 'Makeup Lipstick' },
+    { img: category6, name: 'Face Cream' },
+    { img: category7, name: 'Body Lotion' },
+    { img: category8, name: 'Hand Cream' },
+    { img: category9, name: 'Shampoo' },
   ];
 
   return (
-    <section className="products">
-      <h2>Trending Products</h2>
-      <div className="product-list">
-        {products.map(product => (
-          <div key={product.id} className="product-item">
-            <img src={product.image} alt={product.name} />
-            <h3>{product.name}</h3>
-            <p>{product.price}</p>
-            <span>{product.discount}</span>
+    <section className="categories">
+      <h2>Shop By Products</h2>
+      <div className="category-list row">
+        {categories.map((category, index) => (
+          <div key={index} className="category-item col-md-3">
+            <div className="card mb-4">
+              <img src={category.img} alt={category.name} className="card-img-top img-fluid" style={{ height: '200px', objectFit: 'cover' }} />
+              <div className="card-body">
+                <h5 className="card-title">{category.name}</h5>
+                {cart.includes(category.name) ? (
+                  <button className="btn btn-danger" onClick={() => removeFromCart(category.name)}>
+                    Remove from Cart
+                  </button>
+                ) : (
+                  <button className="btn btn-primary" onClick={() => addToCart(category.name)}>
+                    Add to Cart
+                  </button>
+                )}
+              </div>
+            </div>
           </div>
         ))}
       </div>
@@ -33,4 +53,4 @@ const Products = () => {
   );
 }
 
-export default Products;
+export default Categories;
