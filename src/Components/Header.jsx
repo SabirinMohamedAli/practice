@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom';
 import { FaShoppingCart } from 'react-icons/fa';
 import { CartContext } from '../CartContext';
 
@@ -40,31 +41,31 @@ const Header = ({ showHero = true }) => {
       </style>
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
         <div className="container">
-          <a className="navbar-brand" href="/" style={{ fontFamily: 'Arial, sans-serif', fontSize: '1.5rem' }}>Sabirin Beauty</a>
+          <Link className="navbar-brand" to="/" style={{ fontFamily: 'Arial, sans-serif', fontSize: '1.5rem' }}>Sabirin Beauty</Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link" href="#home" style={{ fontSize: '1.2rem' }}>Home</a>
+                <Link className="nav-link" to="/" style={{ fontSize: '1.2rem' }}>Home</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#about" style={{ fontSize: '1.2rem' }}>About Us</a>
+                <Link className="nav-link" to="/about" style={{ fontSize: '1.2rem' }}>About Us</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#products" style={{ fontSize: '1.2rem' }}>Products</a>
+                <Link className="nav-link" to="/products" style={{ fontSize: '1.2rem' }}>Products</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#services" style={{ fontSize: '1.2rem' }}>Services</a>
+                <Link className="nav-link" to="/services" style={{ fontSize: '1.2rem' }}>Services</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#contact" style={{ fontSize: '1.2rem' }}>Contact Us</a>
+                <Link className="nav-link" to="/contact" style={{ fontSize: '1.2rem' }}>Contact Us</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/cart" style={{ fontSize: '1.2rem' }}>
+                <Link className="nav-link" to="/cart" style={{ fontSize: '1.2rem' }}>
                   <FaShoppingCart /> Cart ({cart.length})
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
