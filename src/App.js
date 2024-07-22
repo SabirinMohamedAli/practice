@@ -3,7 +3,7 @@ import Header from './Components/Header';
 import Categories from './Components/Products';
 import Footer from './Components/Footer';
 import Cart from './Components/Cart';
-import Checkout from './Components/Checkout'; // Import Checkout component
+import Checkout from './Components/Checkout';
 import { CartProvider } from './CartContext';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
