@@ -1,9 +1,9 @@
-// src/components/Footer.js
 import React from 'react';
+import './Footer.css'; // Custom CSS for additional styling
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="footer-bg">
       <div className="footer-content">
         <div className="footer-about">
           <h3>About Sabirin Beauty</h3>
@@ -19,12 +19,6 @@ const Footer = () => {
             <li>Terms of Service</li>
             <li>Contact Us</li>
           </ul>
-        </div>
-        <div className="footer-newsletter">
-          <h3>Newsletter</h3>
-          <p>Subscribe to our newsletter to receive the latest updates and offers.</p>
-          <input type="email" placeholder="Your Email" />
-          <button>Subscribe</button>
         </div>
       </div>
       <div className="footer-bottom">

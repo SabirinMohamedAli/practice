@@ -10,28 +10,35 @@
     color: #333;
   }
   
-  .about-content .col-md-4 {
+  .about-content .col-md-6 {
     margin-bottom: 20px;
   }
   
   .about-content h2 {
     font-family: 'Arial', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #555;
   }
   
   .about-content p {
     font-family: 'Arial', sans-serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #777;
   }
   
-  .products-section img {
-    max-width: 200px;
-    border-radius: 10px;
+  .our-values {
+    margin-top: 40px;
   }
   
-  .products-section img.mx-3 {
-    margin: 0 15px;
+  .our-values h2 {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.8rem;
+    color: #555;
+  }
+  
+  .our-values p {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.1rem;
+    color: #777;
   }
   
