@@ -12,13 +12,17 @@ function App() {
     <Router>
       <CartProvider>
         <div className="App">
-          <Header />
           <Routes>
-            <Route path="/products" element={<Categories />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/" element={<Categories />} />
+            <Route path="*" element={<>
+              <Header />
+              <Routes>
+                <Route path="/products" element={<Categories />} />
+                <Route path="/" element={<Categories />} />
+              </Routes>
+              <Footer />
+            </>} />
           </Routes>
-          <Footer />
         </div>
       </CartProvider>
     </Router>

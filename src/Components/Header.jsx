@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaShoppingCart } from 'react-icons/fa';
-import { CartContext } from '../CartContext'; // Import CartContext
+import { CartContext } from '../CartContext';
 
-const Header = () => {
-  const { cart } = useContext(CartContext); // Use context to get cart items
+const Header = ({ showHero = true }) => {
+  const { cart } = useContext(CartContext);
 
   const heroStyle = {
     display: 'flex',
@@ -40,7 +40,7 @@ const Header = () => {
       </style>
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
         <div className="container">
-          <a className="navbar-brand" href="#" style={{ fontFamily: 'Arial, sans-serif', fontSize: '1.5rem' }}>Sabirin Beauty</a>
+          <a className="navbar-brand" href="/" style={{ fontFamily: 'Arial, sans-serif', fontSize: '1.5rem' }}>Sabirin Beauty</a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -62,18 +62,20 @@ const Header = () => {
                 <a className="nav-link" href="#contact" style={{ fontSize: '1.2rem' }}>Contact Us</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#cart" style={{ fontSize: '1.2rem' }}>
-                  <FaShoppingCart /> Cart ({cart.length}) {/* Display cart count */}
+                <a className="nav-link" href="/cart" style={{ fontSize: '1.2rem' }}>
+                  <FaShoppingCart /> Cart ({cart.length})
                 </a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-      <div className="hero" style={heroStyle}>
-        <h2 style={headingStyle}>Sale Up To 40% Off Aloe Vera Natural Cosmetics</h2>
-        <button className="btn btn-danger mt-3" style={{ padding: '10px 20px', fontSize: '16px' }}>Shop Now</button>
-      </div>
+      {showHero && (
+        <div className="hero" style={heroStyle}>
+          <h2 style={headingStyle}>Sale Up To 40% Off Aloe Vera Natural Cosmetics</h2>
+          <button className="btn btn-danger mt-3" style={{ padding: '10px 20px', fontSize: '16px' }}>Shop Now</button>
+        </div>
+      )}
     </header>
   );
 }
