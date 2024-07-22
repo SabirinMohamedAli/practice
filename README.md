@@ -1,2 +1,0 @@
-# practice
-skincare products
