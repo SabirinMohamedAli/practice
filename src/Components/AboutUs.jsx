@@ -11,7 +11,7 @@ const AboutUs = () => {
       <section className="about-content row text-center">
         <div className="col-md-6 mb-4">
           <h2>Our Story</h2>
-          <p>Sabirin Beauty was founded with a passion for skincare. We believe that everyone deserves to feel confident and beautiful in their skin. Our journey began with a mission to provide high-quality, natural skincare products that promote healthy and radiant skin.</p>
+          <p>Sabirin Beauty was founded with a passion for skincare. We believe that everyone deserves to feel confident and beautiful in their skin. Our journey began with a mission to provide high-quality, natural skincare products that promote healthy .</p>
         </div>
         <div className="col-md-6 mb-4">
           <h2>Our Mission</h2>
