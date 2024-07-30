@@ -24,7 +24,7 @@ Contributions are welcome! If you would like to contribute to this project, plea
 To get started with this project, clone the repository and install the dependencies:
 
 ```bash
-git clone https://github.com/your-username/sabirin-beauty.git
+git clone https://github.com/SabirinMohamedAli/practice.git
 cd skincares 
 npm install
 
