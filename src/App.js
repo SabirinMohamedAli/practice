@@ -6,6 +6,7 @@ import Products from './Components/Products';
 import Cart from './Components/Cart';
 import Checkout from './Components/Checkout';
 import AboutUs from './Components/AboutUs';
+import Service from './Components/Service'; // Import Service component
 import { CartProvider } from './CartContext';
 import './App.css';
 
@@ -16,14 +17,14 @@ function App() {
         <div className="App">
           <Header />
           <Routes>
-          <Route path="/about" element={<AboutUs />} />
+            <Route path="/about" element={<AboutUs />} />
             <Route path="/products" element={<Products />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
-           
+            <Route path="/service" element={<Service />} /> {/* Add route for Service */}
             <Route path="/" element={
               <>
-                  <AboutUs />
+                <AboutUs />
                 <Products />
               </>
             } />
