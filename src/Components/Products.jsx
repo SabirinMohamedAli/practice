@@ -9,6 +9,7 @@ import category6 from '../images/2.jpg';
 import category7 from '../images/3.jpg';
 import category8 from '../images/10.jpg';
 import category9 from '../images/11.jpg';
+import './Categories.css'; // Import CSS file for styling
 
 const Categories = () => {
   const { cart, addToCart, removeFromCart } = useContext(CartContext);
@@ -32,7 +33,7 @@ const Categories = () => {
         {categories.map((category, index) => (
           <div key={index} className="category-item col-md-3">
             <div className="card mb-4">
-              <img src={category.img} alt={category.name} className="card-img-top img-fluid" style={{ height: '200px', objectFit: 'cover' }} />
+              <img src={category.img} alt={category.name} className="card-img-top img-fluid category-image" />
               <div className="card-body">
                 <h5 className="card-title">{category.name}</h5>
                 {cart.includes(category.name) ? (

@@ -1,0 +1,22 @@
+.categories {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .category-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .category-item {
+    margin: 10px;
+  }
+  
+  .category-image {
+    height: 150px; 
+    width: 100%; 
+    object-fit: cover; 
+    border-radius: 5px; 
+  }
+  
